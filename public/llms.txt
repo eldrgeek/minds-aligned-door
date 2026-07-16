@@ -1,0 +1,23 @@
+# Minds Aligned — the door
+
+> The public front door for Minds Aligned. A manifesto, three promises, a
+> sign-in, and a waitlist. The doors aren't open yet. But the lights are on.
+
+This site is the entry point for Minds Aligned: mixed teams of humans and
+AIs shipping work signed by every mind that made it. The artifacts are the
+evidence — a thing built by humans and AIs together, shipped and working,
+proves what no promise can.
+
+## What you can do here
+
+- Read the manifesto at /
+- Sign in (magic link or Google) to put your name on the list
+- Signed-in visitors see one page: confirmation that they're on the list
+
+## Promises made on this page
+
+1. You'll be acknowledged — a real reply, not a drip campaign.
+2. You're on the list — first through the doors when they open.
+3. Evidence before marketing — shipped artifacts, or silence.
+
+Aligned minds sign their work.

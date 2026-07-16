@@ -10,17 +10,26 @@ export async function GET(request: Request) {
   const tokenHash = searchParams.get("token_hash");
   const type = searchParams.get("type") as EmailOtpType | null;
 
+  // Behind Netlify the request URL's origin can be the internal deploy alias
+  // (main--<site>.netlify.app), which would strand the browser on a host that
+  // has no session cookies. Prefer the forwarded host the visitor actually hit.
+  const forwardedHost = request.headers.get("x-forwarded-host");
+  const base =
+    process.env.NODE_ENV === "development" || !forwardedHost
+      ? origin
+      : `https://${forwardedHost}`;
+
   const supabase = createClient();
 
   if (code) {
     const { error } = await supabase.auth.exchangeCodeForSession(code);
-    if (!error) return NextResponse.redirect(`${origin}/list`);
+    if (!error) return NextResponse.redirect(`${base}/list`);
   }
 
   if (tokenHash && type) {
     const { error } = await supabase.auth.verifyOtp({ type, token_hash: tokenHash });
-    if (!error) return NextResponse.redirect(`${origin}/list`);
+    if (!error) return NextResponse.redirect(`${base}/list`);
   }
 
-  return NextResponse.redirect(`${origin}/?auth_error=1`);
+  return NextResponse.redirect(`${base}/?auth_error=1`);
 }
