@@ -1,0 +1,263 @@
+/* Minds Aligned — the door. Typography-first, warm editorial, light + dark. */
+
+:root {
+  --bg: #faf7f0;
+  --bg-elev: #ffffff;
+  --ink: #211d16;
+  --ink-muted: #5c5546;
+  --ink-faint: #8a8172;
+  --line: #e4ddce;
+  --accent: #8a6d2f;
+  --accent-ink: #6e5624;
+  --radius: 6px;
+  --max: 42rem;
+  --font-serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+  --font-sans: "IBM Plex Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-mono: "IBM Plex Mono", "SF Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0f0e0c;
+    --bg-elev: #17150f;
+    --ink: #ebe6da;
+    --ink-muted: #a39b8a;
+    --ink-faint: #6e6758;
+    --line: #2c2920;
+    --accent: #c4a35a;
+    --accent-ink: #d8bc7c;
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  display: flex;
+  flex-direction: column;
+}
+
+main { flex: 1; }
+
+.page {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 1.4rem;
+}
+
+/* ── Hero ── */
+.hero {
+  padding: 7rem 0 3.5rem;
+  text-align: left;
+}
+.hero h1 {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: clamp(2.3rem, 6.5vw, 3.6rem);
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+  margin: 0 0 0.75rem;
+  max-width: 16ch;
+}
+.hero .kicker {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 2.25rem;
+}
+
+/* ── Manifesto ── */
+.manifesto {
+  padding: 1rem 0 3rem;
+}
+.manifesto p {
+  font-family: var(--font-serif);
+  font-size: clamp(1.12rem, 2.4vw, 1.3rem);
+  line-height: 1.75;
+  color: var(--ink);
+  max-width: 34ch;
+  margin: 0 0 2.4rem;
+}
+.manifesto p:last-child {
+  color: var(--accent-ink);
+  margin-bottom: 0;
+}
+
+/* ── Promises ── */
+.promises {
+  padding: 3rem 0 3.5rem;
+  border-top: 1px solid var(--line);
+}
+.promises h2 {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  font-weight: 400;
+  margin: 0 0 2.25rem;
+}
+.promise {
+  margin-bottom: 2rem;
+  max-width: 52ch;
+}
+.promise:last-child { margin-bottom: 0; }
+.promise h3 {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin: 0 0 0.35rem;
+}
+.promise p {
+  margin: 0;
+  color: var(--ink-muted);
+  font-size: 0.98rem;
+}
+
+/* ── CTA / sign-in ── */
+.cta {
+  padding: 3rem 0 5rem;
+  border-top: 1px solid var(--line);
+}
+.cta-support {
+  color: var(--ink-muted);
+  font-size: 0.92rem;
+  margin: 0.9rem 0 0;
+  max-width: 46ch;
+}
+.btn {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.8rem 1.6rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--accent);
+  background: var(--accent);
+  color: var(--bg);
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+.btn:hover { opacity: 0.88; }
+.btn:disabled { opacity: 0.5; cursor: default; }
+.btn-quiet {
+  background: transparent;
+  color: var(--accent-ink);
+  border: 1px solid var(--line);
+}
+.btn-quiet:hover { border-color: var(--accent); opacity: 1; }
+
+.signin-panel {
+  margin-top: 1.6rem;
+  padding: 1.5rem;
+  background: var(--bg-elev);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  max-width: 26rem;
+}
+.signin-panel label {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--ink-muted);
+  margin-bottom: 0.4rem;
+}
+.signin-panel input[type="email"] {
+  width: 100%;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  padding: 0.65rem 0.8rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--bg);
+  color: var(--ink);
+  margin-bottom: 0.8rem;
+}
+.signin-panel input[type="email"]:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+  border-color: transparent;
+}
+.signin-row {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.signin-note {
+  font-size: 0.85rem;
+  color: var(--ink-muted);
+  margin: 0.8rem 0 0;
+}
+.signin-error {
+  font-size: 0.85rem;
+  color: #b85c4a;
+  margin: 0.8rem 0 0;
+}
+.signin-sent {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  color: var(--accent-ink);
+  margin: 0;
+}
+
+/* ── Signed-in (list) page ── */
+.noted {
+  padding: 9rem 0 4rem;
+}
+.noted h1 {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: clamp(2rem, 5.5vw, 3rem);
+  line-height: 1.15;
+  margin: 0 0 1.2rem;
+}
+.noted .your-email {
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  color: var(--accent-ink);
+}
+.noted p {
+  color: var(--ink-muted);
+  max-width: 48ch;
+}
+.noted .signout {
+  margin-top: 2.5rem;
+}
+
+/* ── Footer ── */
+.site-footer {
+  border-top: 1px solid var(--line);
+  padding: 2.2rem 1.4rem 2.6rem;
+  text-align: center;
+}
+.site-footer .credo {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.02rem;
+  color: var(--ink-muted);
+  margin: 0 0 0.5rem;
+}
+.site-footer .wordmark {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin: 0;
+}
+
+@media (max-width: 600px) {
+  .hero { padding-top: 4.5rem; }
+}
