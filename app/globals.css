@@ -257,6 +257,19 @@ main { flex: 1; }
   color: var(--ink-faint);
   margin: 0;
 }
+.site-footer .society-link {
+  margin: 0.9rem 0 0;
+  font-size: 0.78rem;
+}
+.site-footer .society-link a {
+  color: var(--ink-faint);
+  text-decoration: none;
+  border-bottom: 1px solid var(--line);
+}
+.site-footer .society-link a:hover {
+  color: var(--accent-ink);
+  border-bottom-color: var(--accent);
+}
 
 @media (max-width: 600px) {
   .hero { padding-top: 4.5rem; }

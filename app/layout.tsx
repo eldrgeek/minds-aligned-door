@@ -26,6 +26,11 @@ export default function RootLayout({
         <footer className="site-footer">
           <p className="credo">Aligned minds sign their work.</p>
           <p className="wordmark">Minds Aligned</p>
+          <p className="society-link">
+            <a href="https://agi2026.netlify.app">
+              AGI-26: the Society&rsquo;s study guide to the minds building AGI
+            </a>
+          </p>
         </footer>
         <Script
           src="/vendor/soma-feedback/soma-feedback.js"
