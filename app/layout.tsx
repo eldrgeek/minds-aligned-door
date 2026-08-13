@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import Script from "next/script";
 import "./globals.css";
 
@@ -6,6 +6,18 @@ export const metadata: Metadata = {
   title: "Minds Aligned — The artifacts are the evidence.",
   description:
     "Mixed teams of humans and AIs, shipping work signed by every mind that made it. The doors aren't open yet. But the lights are on.",
+  icons: {
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon-32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-16.png", sizes: "16x16", type: "image/png" },
+    ],
+    apple: "/apple-touch-icon.png",
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#0b0d12",
 };
 
 export default function RootLayout({
