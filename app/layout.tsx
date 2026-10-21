@@ -28,10 +28,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link
-          rel="stylesheet"
-          href="/vendor/soma-feedback/soma-feedback.css"
-        />
       </head>
       <body>
         {children}
@@ -45,7 +41,7 @@ export default function RootLayout({
           </p>
         </footer>
         <Script
-          src="/vendor/soma-feedback/soma-feedback.js"
+          src="/vendor/soma-feedback/soma-chip-loader.js"
           data-site="minds-aligned"
           strategy="lazyOnload"
         />
